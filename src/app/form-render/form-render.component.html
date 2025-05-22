@@ -1,0 +1,20 @@
+<h2 style="text-align: center;">📝 Fill the Form</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" style="max-width: 500px; margin: auto;">
+  <div *ngFor="let field of fields" class="form-group">
+    <label>{{ field.label }}</label>
+    <input
+      [type]="field.type"
+      [formControlName]="field.label"
+      [required]="field.required"
+      class="form-control"
+    />
+  </div>
+
+  <button type="submit" class="submit-btn">Submit</button>
+</form>
+
+<div *ngIf="submittedData" class="result">
+  <h3>📦 Submitted Data:</h3>
+  <pre>{{ submittedData | json }}</pre>
+</div>

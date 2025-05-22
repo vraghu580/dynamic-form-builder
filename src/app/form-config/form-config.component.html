@@ -1,0 +1,47 @@
+<h2>Create Your Dynamic Form</h2>
+
+<div>
+  <label>Field Label:
+    <input type="text" [(ngModel)]="fieldLabel" />
+    
+  </label>
+</div>
+
+<div>
+  <label>Field Type:
+    <select [(ngModel)]="fieldType">
+      <option value="text">Text</option>
+      <option value="number">Number</option>
+      <option value="email">Email</option>
+      <option value="date">Date</option>
+    </select>
+  </label>
+</div>
+
+<div>
+  <label>
+    <input type="checkbox" [(ngModel)]="isRequired" />
+    Required
+  </label>
+</div>
+
+<button (click)="addField()">Add Field</button>
+
+<h3>Fields Preview:</h3>
+<ul>
+  <li *ngFor="let field of fields; let i = index">
+    {{ field.label }} ({{ field.type }}) 
+    <span *ngIf="field.required">*required</span>
+    <button (click)="removeField(i)">Remove</button>
+  </li>
+</ul>
+<button (click)="previewForm()" [disabled]="fields.length === 0">Preview Form</button>
+
+<!-- New copy link section -->
+<div *ngIf="fields.length > 0" style="margin-top: 20px;">
+  <button (click)="copyLink()">🔗 Copy Shareable Link</button>
+  <p *ngIf="shareableLink" style="word-break: break-all;">📎 Link: {{ shareableLink }}</p>
+</div>
+
+
+<button (click)="previewForm()" [disabled]="fields.length === 0">Preview Form</button>
