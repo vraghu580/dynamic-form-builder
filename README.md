@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DynamicFormBuilder
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.13.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# dynamic-form-builder
+An Angular dynamic form builder with real-time form preview and shareable links
+>>>>>>> 0adbeb14c1f81c7535d0f86cf66380d174f94a58
